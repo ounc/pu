@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="PU 发行逻辑：总量、分配与治理执行路径" />
+  <title>PU Issuance</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body data-page="issuance">
+  <div class="background-orb orb-a"></div>
+  <div class="background-orb orb-b"></div>
+  <div class="background-grid"></div>
+  <div class="scroll-progress" aria-hidden="true"><span></span></div>
+
+  <main class="page-shell">
+    <header class="topbar card">
+      <a class="brand" href="index.html" aria-label="返回首页">
+        <span class="brand-mark">PU</span>
+        <span class="brand-copy">
+          <strong>PU Token</strong>
+          <small>Polygon Mainnet Dashboard</small>
+        </span>
+      </a>
+
+      <nav class="nav-links" aria-label="页面导航">
+        <a class="nav-link" href="index.html" data-nav-link data-nav="index" data-zh="概览" data-en="Overview">概览</a>
+        <a class="nav-link active" href="issuance.html" data-nav-link data-nav="issuance" data-zh="发行" data-en="Issuance">发行</a>
+        <a class="nav-link" href="market.html" data-nav-link data-nav="market" data-zh="市场" data-en="Market">市场</a>
+        <a class="nav-link" href="roadmap.html" data-nav-link data-nav="roadmap" data-zh="路线图" data-en="Roadmap">路线图</a>
+        <a class="nav-link" href="faq.html" data-nav-link data-nav="faq" data-zh="FAQ" data-en="FAQ">FAQ</a>
+        <a class="nav-link" href="index.html#links" data-nav-link data-nav="links" data-zh="入口" data-en="Links">入口</a>
+      </nav>
+
+      <button class="lang-toggle" type="button" data-lang-toggle>EN</button>
+    </header>
+
+    <section class="hero card" id="overview">
+      <div class="hero-copy">
+        <div class="eyebrow" data-zh="Issuance Blueprint" data-en="Issuance Blueprint">Issuance Blueprint</div>
+        <h1 data-zh="发行设计" data-en="Issuance Design">发行设计</h1>
+        <p class="hero-text" data-zh="PU 在初始化时一次性铸造 10 亿枚，不做自动增发。后续由治理地址按公开计划分配到团队、流动性、生态和运营地址。" data-en="PU mints 1 billion tokens once during initialization with no automatic inflation. Distribution is then executed by governance wallets into team, liquidity, ecosystem, and operations addresses.">PU 在初始化时一次性铸造 10 亿枚，不做自动增发。后续由治理地址按公开计划分配到团队、流动性、生态和运营地址。</p>
+        <div class="hero-actions">
+          <a class="button button-primary" href="index.html" data-zh="返回总览" data-en="Back To Overview">返回总览</a>
+          <a class="button button-secondary" href="../PU_%E5%8F%91%E8%A1%8C%E4%B8%8E%E4%B9%B0%E5%8D%96%E9%80%BB%E8%BE%91%E8%AF%B4%E6%98%8E.md" target="_blank" rel="noreferrer" data-zh="查看完整文档" data-en="Open Full Document">查看完整文档</a>
+        </div>
+      </div>
+      <div class="hero-panel">
+        <div class="panel-grid">
+          <article class="metric-card accent-cyan">
+            <span class="metric-label" data-zh="总量" data-en="Total Supply">总量</span>
+            <strong>1,000,000,000</strong>
+            <small>PU</small>
+          </article>
+          <article class="metric-card accent-violet">
+            <span class="metric-label" data-zh="小数位" data-en="Decimals">小数位</span>
+            <strong>18</strong>
+            <small>ERC-20</small>
+          </article>
+          <article class="metric-card accent-gold">
+            <span class="metric-label" data-zh="网络" data-en="Network">网络</span>
+            <strong>Polygon</strong>
+            <small>Mainnet</small>
+          </article>
+          <article class="metric-card accent-green">
+            <span class="metric-label" data-zh="治理" data-en="Governance">治理</span>
+            <strong>Gnosis Safe</strong>
+            <small>ProxyAdmin Owner</small>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="tabs card" id="issuance">
+      <div class="panel-heading">
+        <h3 data-zh="发行执行步骤" data-en="Issuance Execution Steps">发行执行步骤</h3>
+        <p data-zh="以下步骤建议公开透明执行，并保留 TxHash 对外披露。" data-en="The following steps should be executed transparently with public TxHash records.">以下步骤建议公开透明执行，并保留 TxHash 对外披露。</p>
+      </div>
+      <div class="timeline">
+        <div class="timeline-item">
+          <span class="step">1</span>
+          <div>
+            <h4 data-zh="初始铸造" data-en="Initial Mint">初始铸造</h4>
+            <p data-zh="在 initialize 中一次性铸造总量到发行地址。" data-en="Mint full supply once in initialize to the issuance wallet.">在 initialize 中一次性铸造总量到发行地址。</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <span class="step">2</span>
+          <div>
+            <h4 data-zh="权限交接" data-en="Permission Transfer">权限交接</h4>
+            <p data-zh="把 ProxyAdmin Owner 迁移到多签，降低单点风险。" data-en="Transfer ProxyAdmin ownership to multisig to reduce single-point risk.">把 ProxyAdmin Owner 迁移到多签，降低单点风险。</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <span class="step">3</span>
+          <div>
+            <h4 data-zh="分配与披露" data-en="Allocation And Disclosure">分配与披露</h4>
+            <p data-zh="按白皮书比例分发，定期更新链上地址和流向。" data-en="Distribute by whitepaper ratio and regularly publish on-chain flows.">按白皮书比例分发，定期更新链上地址和流向。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="site-footer card">
+      <div class="site-footer-main">
+        <strong data-zh="PU 官方信息页" data-en="PU Official Information Hub">PU 官方信息页</strong>
+        <p data-zh="本页面用于展示公开资料，不构成投资建议。请仅使用官方合约地址进行查询与交易。" data-en="This site is for public information only and does not constitute investment advice. Use official contract addresses only when searching or trading.">本页面用于展示公开资料，不构成投资建议。请仅使用官方合约地址进行查询与交易。</p>
+      </div>
+      <div class="site-footer-meta">
+        <span data-zh="网络：Polygon Mainnet" data-en="Network: Polygon Mainnet">网络：Polygon Mainnet</span>
+        <span data-zh="代币：PU" data-en="Token: PU">代币：PU</span>
+        <span data-zh="治理：Gnosis Safe" data-en="Governance: Gnosis Safe">治理：Gnosis Safe</span>
+      </div>
+    </footer>
+  </main>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <button class="back-to-top" type="button" aria-label="回到顶部">↑</button>
+
+  <script src="app.js"></script>
+</body>
+</html>

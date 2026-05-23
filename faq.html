@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="PU 常见问题：购买、持有、价格与治理" />
+  <title>PU FAQ</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body data-page="faq">
+  <div class="background-orb orb-a"></div>
+  <div class="background-orb orb-b"></div>
+  <div class="background-grid"></div>
+  <div class="scroll-progress" aria-hidden="true"><span></span></div>
+
+  <main class="page-shell">
+    <header class="topbar card">
+      <a class="brand" href="index.html" aria-label="返回首页">
+        <span class="brand-mark">PU</span>
+        <span class="brand-copy">
+          <strong>PU Token</strong>
+          <small>Polygon Mainnet Dashboard</small>
+        </span>
+      </a>
+
+      <nav class="nav-links" aria-label="页面导航">
+        <a class="nav-link" href="index.html" data-nav-link data-nav="index" data-zh="概览" data-en="Overview">概览</a>
+        <a class="nav-link" href="issuance.html" data-nav-link data-nav="issuance" data-zh="发行" data-en="Issuance">发行</a>
+        <a class="nav-link" href="market.html" data-nav-link data-nav="market" data-zh="市场" data-en="Market">市场</a>
+        <a class="nav-link" href="roadmap.html" data-nav-link data-nav="roadmap" data-zh="路线图" data-en="Roadmap">路线图</a>
+        <a class="nav-link active" href="faq.html" data-nav-link data-nav="faq" data-zh="FAQ" data-en="FAQ">FAQ</a>
+        <a class="nav-link" href="index.html#links" data-nav-link data-nav="links" data-zh="入口" data-en="Links">入口</a>
+      </nav>
+
+      <button class="lang-toggle" type="button" data-lang-toggle>EN</button>
+    </header>
+
+    <section class="faq card" id="faq">
+      <div class="section-head">
+        <div>
+          <span class="kicker">FAQ</span>
+          <h2 data-zh="常见问题" data-en="Frequently Asked Questions">常见问题</h2>
+          <p data-zh="这里集中回答社区最常见的购买、持有和治理问题。" data-en="This section answers the most common community questions about trading, holding, and governance.">这里集中回答社区最常见的购买、持有和治理问题。</p>
+        </div>
+      </div>
+
+      <div class="faq-list">
+        <button class="faq-item active" type="button">
+          <div class="faq-question">
+            <strong data-zh="别人现在能买 PU 吗？" data-en="Can people buy PU right now?">别人现在能买 PU 吗？</strong>
+            <span data-zh="点击展开" data-en="Click to expand">点击展开</span>
+          </div>
+          <div class="faq-answer" data-zh="只有当你创建公开流动性池后，别人才能通过 DEX 正常买卖 PU。" data-en="Only after you create a public liquidity pool can others buy and sell PU on DEXs.">只有当你创建公开流动性池后，别人才能通过 DEX 正常买卖 PU。</div>
+        </button>
+
+        <button class="faq-item" type="button">
+          <div class="faq-question">
+            <strong data-zh="我需要自己买回一部分 PU 吗？" data-en="Do I need to buy back some PU myself?">我需要自己买回一部分 PU 吗？</strong>
+            <span data-zh="点击展开" data-en="Click to expand">点击展开</span>
+          </div>
+          <div class="faq-answer" data-zh="不一定。若初始供应已经在你的控制地址，你本身已持有发行份额。" data-en="Not necessarily. If initial supply is already in your controlled wallet, you already hold the issuance allocation.">不一定。若初始供应已经在你的控制地址，你本身已持有发行份额。</div>
+        </button>
+
+        <button class="faq-item" type="button">
+          <div class="faq-question">
+            <strong data-zh="PU 是稳定币吗？" data-en="Is PU a stablecoin?">PU 是稳定币吗？</strong>
+            <span data-zh="点击展开" data-en="Click to expand">点击展开</span>
+          </div>
+          <div class="faq-answer" data-zh="不是。PU 属于可交易代币，价格由市场流动性和交易行为决定。" data-en="No. PU is a tradable token whose price is determined by liquidity and market activity.">不是。PU 属于可交易代币，价格由市场流动性和交易行为决定。</div>
+        </button>
+      </div>
+    </section>
+
+    <footer class="site-footer card">
+      <div class="site-footer-main">
+        <strong data-zh="PU 官方信息页" data-en="PU Official Information Hub">PU 官方信息页</strong>
+        <p data-zh="本页面用于展示公开资料，不构成投资建议。请仅使用官方合约地址进行查询与交易。" data-en="This site is for public information only and does not constitute investment advice. Use official contract addresses only when searching or trading.">本页面用于展示公开资料，不构成投资建议。请仅使用官方合约地址进行查询与交易。</p>
+      </div>
+      <div class="site-footer-meta">
+        <span data-zh="网络：Polygon Mainnet" data-en="Network: Polygon Mainnet">网络：Polygon Mainnet</span>
+        <span data-zh="代币：PU" data-en="Token: PU">代币：PU</span>
+        <span data-zh="治理：Gnosis Safe" data-en="Governance: Gnosis Safe">治理：Gnosis Safe</span>
+      </div>
+    </footer>
+  </main>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <button class="back-to-top" type="button" aria-label="回到顶部">↑</button>
+
+  <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="PU 市场结构：流动性、定价、交易路径" />
+  <title>PU Market</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body data-page="market">
+  <div class="background-orb orb-a"></div>
+  <div class="background-orb orb-b"></div>
+  <div class="background-grid"></div>
+  <div class="scroll-progress" aria-hidden="true"><span></span></div>
+
+  <main class="page-shell">
+    <header class="topbar card">
+      <a class="brand" href="index.html" aria-label="返回首页">
+        <span class="brand-mark">PU</span>
+        <span class="brand-copy">
+          <strong>PU Token</strong>
+          <small>Polygon Mainnet Dashboard</small>
+        </span>
+      </a>
+
+      <nav class="nav-links" aria-label="页面导航">
+        <a class="nav-link" href="index.html" data-nav-link data-nav="index" data-zh="概览" data-en="Overview">概览</a>
+        <a class="nav-link" href="issuance.html" data-nav-link data-nav="issuance" data-zh="发行" data-en="Issuance">发行</a>
+        <a class="nav-link active" href="market.html" data-nav-link data-nav="market" data-zh="市场" data-en="Market">市场</a>
+        <a class="nav-link" href="roadmap.html" data-nav-link data-nav="roadmap" data-zh="路线图" data-en="Roadmap">路线图</a>
+        <a class="nav-link" href="faq.html" data-nav-link data-nav="faq" data-zh="FAQ" data-en="FAQ">FAQ</a>
+        <a class="nav-link" href="index.html#links" data-nav-link data-nav="links" data-zh="入口" data-en="Links">入口</a>
+      </nav>
+
+      <button class="lang-toggle" type="button" data-lang-toggle>EN</button>
+    </header>
+
+    <section class="market card" id="market">
+      <div class="section-head">
+        <div>
+          <span class="kicker">Market Snapshot</span>
+          <h2 data-zh="市场逻辑" data-en="Market Mechanics">市场逻辑</h2>
+          <p data-zh="PU 价格由流动性池实时形成。没有公开池时，用户无法在 DEX 上完成正常买卖。" data-en="PU price is discovered in liquidity pools. Without a public pool, users cannot trade normally on DEXs.">PU 价格由流动性池实时形成。没有公开池时，用户无法在 DEX 上完成正常买卖。</p>
+        </div>
+        <div class="status-pill status-live">🟢 流动性已上线</div>
+      </div>
+
+      <div class="market-grid">
+        <article class="chart-card">
+          <div class="chart-topline">
+            <div>
+              <span class="metric-label" data-zh="定价公式" data-en="Pricing Formula">定价公式</span>
+              <strong>x · y = k</strong>
+            </div>
+            <span class="trend-tag trend-up" data-zh="AMM" data-en="AMM">AMM</span>
+          </div>
+          <div class="chart-caption">
+            <div>
+              <span data-zh="买入行为" data-en="Buy Behavior">买入行为</span>
+              <strong data-zh="池内 PU 减少，价格上升" data-en="PU in pool decreases, price rises">池内 PU 减少，价格上升</strong>
+            </div>
+            <div>
+              <span data-zh="卖出行为" data-en="Sell Behavior">卖出行为</span>
+              <strong data-zh="池内 PU 增加，价格下降" data-en="PU in pool increases, price drops">池内 PU 增加，价格下降</strong>
+            </div>
+          </div>
+        </article>
+
+        <div class="market-side">
+          <div class="detail-box tall-box">
+            <h4 data-zh="交易路径" data-en="Trading Path">交易路径</h4>
+            <ul>
+              <li data-zh="切换钉包网络到 Polygon Mainnet。" data-en="Switch wallet to Polygon Mainnet.">1. 切换钉包网络到 Polygon Mainnet。</li>
+              <li data-zh="准备少量 POL 用于 gas（建议 0.1 POL 以上）。" data-en="Prepare some POL for gas (0.1+ recommended).">2. 准备少量 POL 用于 gas（建议 0.1 以上）。</li>
+              <li>3. 点击入口→
+                <a href="https://dapp.quickswap.exchange/swap?from=0x3c499c542cEF5E3811e1192ce70d8cC03d5c3359&to=0xB75A2C4f8517e9b40E8C659731968C55955580d5&chainId=137" target="_blank" rel="noreferrer" style="color:var(--accent-cyan);font-weight:600;">在 QuickSwap 交易 PU/USDC</a>
+              </li>
+              <li data-zh="在钉包中添加 PU 合约地址以显示余额。" data-en="Add PU contract address in wallet to display balance.">4. 钉包中添加合约地址显示 PU 余额：<br><small><code>0xB75A2C4f8517e9b40E8C659731968C55955580d5</code></small></li>
+            </ul>
+          </div>
+          <div class="detail-box tall-box">
+            <h4 data-zh="滑点建议" data-en="Slippage Guide">滑点建议</h4>
+            <p style="font-size:.85em;color:var(--text-muted);margin-bottom:.6rem;">当前池子深度约 100 USDC，小额交易建议：</p>
+            <ul>
+              <li>≤ 1 USDC 单笔：滑点设 <strong>1%</strong></li>
+              <li>1–5 USDC 单笔：滑点设 <strong>3%</strong></li>
+              <li>&gt; 5 USDC 单笔：滑点设 <strong>5%+</strong> 或分批执行</li>
+              <li>QuickSwap 设置路径：右上角 ⚙️ → Slippage Tolerance</li>
+            </ul>
+          </div>
+          <div class="detail-box tall-box">
+            <h4 data-zh="风险提示" data-en="Risk Notes">风险提示</h4>
+            <ul>
+              <li data-zh="浅池会放大价格滑点。" data-en="Shallow pools amplify slippage.">浅池会放大价格滑点。</li>
+              <li data-zh="大单需要分批执行。" data-en="Large orders should be split.">大单需要分批执行。</li>
+              <li data-zh="务必核对官方合约地址。" data-en="Always verify the official contract address.">务必核对官方合约地址。</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="site-footer card">
+      <div class="site-footer-main">
+        <strong data-zh="PU 官方信息页" data-en="PU Official Information Hub">PU 官方信息页</strong>
+        <p data-zh="本页面用于展示公开资料，不构成投资建议。请仅使用官方合约地址进行查询与交易。" data-en="This site is for public information only and does not constitute investment advice. Use official contract addresses only when searching or trading.">本页面用于展示公开资料，不构成投资建议。请仅使用官方合约地址进行查询与交易。</p>
+      </div>
+      <div class="site-footer-meta">
+        <span data-zh="网络：Polygon Mainnet" data-en="Network: Polygon Mainnet">网络：Polygon Mainnet</span>
+        <span data-zh="代币：PU" data-en="Token: PU">代币：PU</span>
+        <span data-zh="治理：Gnosis Safe" data-en="Governance: Gnosis Safe">治理：Gnosis Safe</span>
+      </div>
+    </footer>
+  </main>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <button class="back-to-top" type="button" aria-label="回到顶部">↑</button>
+
+  <script src="app.js"></script>
+</body>
+</html>

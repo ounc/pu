@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1a1a2e"/>
+      <stop offset="100%" style="stop-color:#16213e"/>
+    </linearGradient>
+    <linearGradient id="ring" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#00d4ff"/>
+      <stop offset="100%" style="stop-color:#7b2ff7"/>
+    </linearGradient>
+    <linearGradient id="text" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ffffff"/>
+      <stop offset="100%" style="stop-color:#c8d6e5"/>
+    </linearGradient>
+  </defs>
+
+  <!-- 背景圆 -->
+  <circle cx="128" cy="128" r="128" fill="url(#bg)"/>
+
+  <!-- 渐变光环 -->
+  <circle cx="128" cy="128" r="112" fill="none" stroke="url(#ring)" stroke-width="6" opacity="0.8"/>
+
+  <!-- 内圆装饰 -->
+  <circle cx="128" cy="128" r="96" fill="#0f0f23" opacity="0.6"/>
+
+  <!-- 六边形装饰 -->
+  <polygon points="128,42 194,82 194,162 128,202 62,162 62,82"
+           fill="none" stroke="url(#ring)" stroke-width="2" opacity="0.3"/>
+
+  <!-- 字母 P -->
+  <text x="128" y="150"
+        font-family="'Arial Black', 'Arial', sans-serif"
+        font-weight="900"
+        font-size="88"
+        text-anchor="middle"
+        fill="url(#text)"
+        letter-spacing="-4">PU</text>
+
+  <!-- 底部标签 -->
+  <text x="128" y="195"
+        font-family="'Arial', sans-serif"
+        font-weight="400"
+        font-size="14"
+        text-anchor="middle"
+        fill="#00d4ff"
+        opacity="0.8"
+        letter-spacing="4">POLYGON</text>
+</svg>

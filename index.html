@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="PU 代币展示页：发行、买卖、价格、搜索方式与链上信息总览" />
+  <meta property="og:title" content="PU Token" />
+  <meta property="og:description" content="PU is a fixed-supply ERC-20 token on Polygon Mainnet, tradeable on QuickSwap v3." />
+  <meta property="og:image" content="assets/pu-logo-256.png" />
+  <meta property="og:type" content="website" />
+  <title>PU Token Dashboard</title>
+  <link rel="icon" type="image/png" href="assets/pu-logo-256.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body data-page="index">
+  <div class="background-orb orb-a"></div>
+  <div class="background-orb orb-b"></div>
+  <div class="background-grid"></div>
+  <div class="scroll-progress" aria-hidden="true"><span></span></div>
+
+  <main class="page-shell">
+    <header class="topbar card">
+      <a class="brand" href="#overview" aria-label="返回顶部">
+        <span class="brand-mark">PU</span>
+        <span class="brand-copy">
+          <strong>PU Token</strong>
+          <small>Polygon Mainnet Dashboard</small>
+        </span>
+      </a>
+
+      <nav class="nav-links" aria-label="页面导航">
+        <a class="nav-link active" href="index.html" data-nav-link data-nav="index" data-zh="概览" data-en="Overview">概览</a>
+        <a class="nav-link" href="issuance.html" data-nav-link data-nav="issuance" data-zh="发行" data-en="Issuance">发行</a>
+        <a class="nav-link" href="market.html" data-nav-link data-nav="market" data-zh="市场" data-en="Market">市场</a>
+        <a class="nav-link" href="roadmap.html" data-nav-link data-nav="roadmap" data-zh="路线图" data-en="Roadmap">路线图</a>
+        <a class="nav-link" href="faq.html" data-nav-link data-nav="faq" data-zh="FAQ" data-en="FAQ">FAQ</a>
+        <a class="nav-link" href="index.html#links" data-nav-link data-nav="links" data-zh="入口" data-en="Links">入口</a>
+      </nav>
+
+      <button class="lang-toggle" type="button" data-lang-toggle>EN</button>
+    </header>
+
+    <section class="hero card" id="overview">
+      <div class="hero-copy">
+        <div class="eyebrow" data-zh="Polygon Mainnet · 可升级 ERC-20" data-en="Polygon Mainnet · Upgradeable ERC-20">Polygon Mainnet · 可升级 ERC-20</div>
+        <h1>PU Token</h1>
+        <p class="hero-text" data-zh="这是 PU 的官方展示页，用来说明发行逻辑、持有方式、购买流程、价格形成、搜索入口和治理结构。适合社区公告、官网主页或项目介绍页使用。" data-en="This is the official PU page describing issuance logic, holding methods, buy-sell flow, price discovery, search routes, and governance design. It works for community announcements and project homepages.">
+          这是 PU 的官方展示页，用来说明发行逻辑、持有方式、购买流程、价格形成、搜索入口和治理结构。适合社区公告、官网主页或项目介绍页使用。
+        </p>
+
+        <div class="hero-badges">
+          <span class="pill pill-primary">总量固定 1,000,000,000</span>
+          <span class="pill pill-green">流动性已上线 ✓</span>
+          <span class="pill">Gnosis Safe 管理</span>
+          <span class="pill">无税费 / 无黑名单</span>
+        </div>
+
+        <div class="hero-actions">
+          <a class="button button-primary" href="https://dapp.quickswap.exchange/swap?from=0x3c499c542cEF5E3811e1192ce70d8cC03d5c3359&to=0xB75A2C4f8517e9b40E8C659731968C55955580d5&chainId=137" target="_blank" rel="noreferrer" data-zh="立即交易 PU" data-en="Trade PU Now">立即交易 PU</a>
+          <a class="button button-secondary" href="https://polygonscan.com/token/0xB75A2C4f8517e9b40E8C659731968C55955580d5" target="_blank" rel="noreferrer" data-zh="打开 Token 页面" data-en="Open Token Page">打开 Token 页面</a>
+        </div>
+      </div>
+
+      <div class="hero-panel">
+        <div class="panel-grid">
+          <article class="metric-card accent-cyan">
+            <span class="metric-label">总供应量</span>
+            <strong>1,000,000,000</strong>
+            <small>PU · 18 decimals</small>
+          </article>
+          <article class="metric-card accent-violet">
+            <span class="metric-label">当前持币地址</span>
+            <strong>1</strong>
+            <small>主网初始持有者</small>
+          </article>
+          <article class="metric-card accent-gold">
+            <span class="metric-label">主网状态</span>
+            <strong>已部署</strong>
+            <small>Polygon Mainnet</small>
+          </article>
+          <article class="metric-card accent-green">
+            <span class="metric-label">治理</span>
+            <strong>Safe</strong>
+            <small>ProxyAdmin 已转移</small>
+          </article>
+        </div>
+
+        <div class="address-stack">
+          <div class="address-item">
+            <div>
+              <span>Proxy</span>
+              <code>0xB75A2C4f8517e9b40E8C659731968C55955580d5</code>
+            </div>
+            <button data-copy="0xB75A2C4f8517e9b40E8C659731968C55955580d5">复制</button>
+          </div>
+          <div class="address-item">
+            <div>
+              <span>Implementation</span>
+              <code>0x51cB7d6601E8f5Bf946474E0a7F8b922F54A09a0</code>
+            </div>
+            <button data-copy="0x51cB7d6601E8f5Bf946474E0a7F8b922F54A09a0">复制</button>
+          </div>
+          <div class="address-item">
+            <div>
+              <span>ProxyAdmin Owner</span>
+              <code>0x9cf70532eCb71347aB723dAa5887080c60B64Df8</code>
+            </div>
+            <button data-copy="0x9cf70532eCb71347aB723dAa5887080c60B64Df8">复制</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="info-strip card">
+      <div>
+        <span class="kicker">Token Overview</span>
+        <h2>项目关键信息一眼看懂</h2>
+      </div>
+      <div class="chip-row">
+        <span class="chip">Name: pu</span>
+        <span class="chip">Symbol: PU</span>
+        <span class="chip">Chain: Polygon</span>
+        <span class="chip">Decimals: 18</span>
+      </div>
+    </section>
+
+    <section class="tabs card" id="issuance">
+      <div class="tab-bar" role="tablist" aria-label="PU 信息分类">
+        <button class="tab active" role="tab" aria-selected="true" data-tab="issuance">发行逻辑</button>
+        <button class="tab" role="tab" aria-selected="false" data-tab="trade">买卖逻辑</button>
+        <button class="tab" role="tab" aria-selected="false" data-tab="price">价格形成</button>
+        <button class="tab" role="tab" aria-selected="false" data-tab="search">搜索方式</button>
+        <button class="tab" role="tab" aria-selected="false" data-tab="governance">治理与安全</button>
+      </div>
+
+      <div class="tab-panels">
+        <article class="tab-panel active" data-panel="issuance">
+          <div class="panel-heading">
+            <h3>发行逻辑</h3>
+            <p>PU 采用一次性初始化铸造，总量固定，不再自动增发。</p>
+          </div>
+
+          <div class="timeline">
+            <div class="timeline-item">
+              <span class="step">1</span>
+              <div>
+                <h4>部署合约</h4>
+                <p>Proxy + Implementation 已部署到 Polygon 主网。</p>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <span class="step">2</span>
+              <div>
+                <h4>初始化铸造</h4>
+                <p>部署时把全部 10 亿 PU 一次性铸造给初始化地址。</p>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <span class="step">3</span>
+              <div>
+                <h4>按计划分配</h4>
+                <p>团队、流动性、生态、储备按 tokenomics 逐步转入不同地址。</p>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="tab-panel" data-panel="trade">
+          <div class="panel-heading">
+            <h3>买卖逻辑</h3>
+            <p>没有流动性池时，别人只能看见合约，不能在市场上正常买卖。</p>
+          </div>
+
+          <div class="two-col">
+            <div class="detail-box">
+              <h4>怎么买</h4>
+              <ol>
+                <li>切换到 Polygon Mainnet。</li>
+                <li>准备 gas 资产 POL。</li>
+                <li>在 DEX 上用 POL 或 USDC 兑换 PU。</li>
+                <li>在钱包中手动添加合约地址。</li>
+              </ol>
+            </div>
+            <div class="detail-box">
+              <h4>怎么持有</h4>
+              <ol>
+                <li>小额可放热钱包。</li>
+                <li>大额建议冷钱包或多签。</li>
+                <li>务必保存助记词与地址备份。</li>
+                <li>不要信任陌生链接和假客服。</li>
+              </ol>
+            </div>
+          </div>
+        </article>
+
+        <article class="tab-panel" data-panel="price">
+          <div class="panel-heading">
+            <h3>价格形成</h3>
+            <p>PU 的价格由流动性池决定，不是合约里写死的。</p>
+          </div>
+
+          <div class="formula-card">
+            <div>
+              <span class="formula-label">起始价格</span>
+              <strong>P = USDC ÷ PU</strong>
+            </div>
+            <div>
+              <span class="formula-label">恒定乘积池</span>
+              <strong>x · y = k</strong>
+            </div>
+          </div>
+
+          <div class="grid-2">
+            <div class="detail-box">
+              <h4>初始池子作用</h4>
+              <p>首池越深，价格越稳；首池越浅，买卖越容易把价格推高或压低。</p>
+            </div>
+            <div class="detail-box">
+              <h4>后续价格变化</h4>
+              <p>每笔买单都会减少 PU、增加另一侧资产，卖单则相反，所以价格会随交易自动变化。</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="tab-panel" data-panel="search">
+          <div class="panel-heading">
+            <h3>搜索方式</h3>
+            <p>别人找 PU 的最稳妥方式是“先搜合约地址，再核对交易对”。</p>
+          </div>
+
+          <div class="search-cards">
+            <div class="detail-box">
+              <h4>合约地址</h4>
+              <p>在 PolygonScan 搜索主网 Proxy 地址：</p>
+              <code>0xB75A2C4f8517e9b40E8C659731968C55955580d5</code>
+            </div>
+            <div class="detail-box">
+              <h4>钱包添加</h4>
+              <p>在 MetaMask / Rabby 中粘贴合约地址，自动识别 PU 与 18 小数位。</p>
+            </div>
+            <div class="detail-box">
+              <h4>交易对入口</h4>
+              <p>PU/USDC 流动性池已在 QuickSwap v3 上线（0.01% 手续费）。</p>
+              <a href="https://dapp.quickswap.exchange/swap?from=0x3c499c542cEF5E3811e1192ce70d8cC03d5c3359&to=0xB75A2C4f8517e9b40E8C659731968C55955580d5&chainId=137" target="_blank" rel="noreferrer" style="color:var(--accent-cyan);font-weight:600;">→ 在 QuickSwap 交易</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="tab-panel" data-panel="governance">
+          <div class="panel-heading">
+            <h3>治理与安全</h3>
+            <p>关键权限已移交多签，适合公开项目的长期治理。</p>
+          </div>
+
+          <div class="two-col">
+            <div class="detail-box">
+              <h4>公开规则</h4>
+              <ul>
+                <li>总量固定为 10 亿。</li>
+                <li>无税费、无黑名单、无自动燃烧。</li>
+                <li>团队/生态/流动性分配按公开规则执行。</li>
+              </ul>
+            </div>
+            <div class="detail-box">
+              <h4>安全建议</h4>
+              <ul>
+                <li>大额资产交给 Safe。</li>
+                <li>流动性尽量锁仓。</li>
+                <li>保留所有 TxHash 便于追溯。</li>
+              </ul>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="market card" id="market">
+      <div class="section-head">
+        <div>
+          <span class="kicker">Market Snapshot</span>
+          <h2>市场快照与交易路径</h2>
+          <p>把合约、价格、流动性和购买入口放在同一屏，方便社区快速理解 PU 的市场状态。</p>
+        </div>
+        <div class="status-pill status-live">🟢 Polygon Mainnet · 流动性已上线</div>
+      </div>
+
+      <div class="market-grid">
+        <article class="chart-card">
+          <div class="chart-topline">
+            <div>
+              <span class="metric-label">价格带</span>
+              <strong>0.0001 USDC / PU</strong>
+            </div>
+            <span class="trend-tag trend-up">示意</span>
+          </div>
+
+          <svg class="sparkline" viewBox="0 0 800 260" preserveAspectRatio="none" aria-label="PU 价格示意图">
+            <defs>
+              <linearGradient id="lineGradient" x1="0" x2="1" y1="0" y2="0">
+                <stop offset="0%" stop-color="#2ad1c9" />
+                <stop offset="50%" stop-color="#7c5cff" />
+                <stop offset="100%" stop-color="#f7b267" />
+              </linearGradient>
+              <linearGradient id="areaGradient" x1="0" x2="0" y1="0" y2="1">
+                <stop offset="0%" stop-color="rgba(124, 92, 255, 0.34)" />
+                <stop offset="100%" stop-color="rgba(124, 92, 255, 0.02)" />
+              </linearGradient>
+            </defs>
+            <path class="sparkline-area" d="M 0 200 C 90 194, 120 110, 200 150 S 330 225, 410 170 S 540 60, 620 118 S 720 168, 800 105 L 800 260 L 0 260 Z"></path>
+            <path class="sparkline-line" d="M 0 200 C 90 194, 120 110, 200 150 S 330 225, 410 170 S 540 60, 620 118 S 720 168, 800 105"></path>
+            <g class="sparkline-dots">
+              <circle cx="0" cy="200" r="5"></circle>
+              <circle cx="200" cy="150" r="5"></circle>
+              <circle cx="410" cy="170" r="5"></circle>
+              <circle cx="620" cy="118" r="5"></circle>
+              <circle cx="800" cy="105" r="5"></circle>
+            </g>
+          </svg>
+
+          <div class="chart-caption">
+            <div>
+              <span>流动性深度</span>
+              <strong>建议先小池测试，再分批补池</strong>
+            </div>
+            <div>
+              <span>交易逻辑</span>
+              <strong>买入推高价格，卖出压低价格</strong>
+            </div>
+          </div>
+        </article>
+
+        <div class="market-side">
+          <div class="detail-box tall-box">
+            <h4>当前对外入口</h4>
+            <div class="mini-list">
+              <span>主网合约地址：<code>0xB75A2C4f8517e9b40E8C659731968C55955580d5</code></span>
+              <span>交易对：<strong>PU / USDC · 0.01% 手续费</strong></span>
+              <span>DEX：<a href="https://dapp.quickswap.exchange/swap?from=0x3c499c542cEF5E3811e1192ce70d8cC03d5c3359&to=0xB75A2C4f8517e9b40E8C659731968C55955580d5&chainId=137" target="_blank" rel="noreferrer">QuickSwap（点击交易）</a></span>
+              <span>Token 页面：<a href="https://polygonscan.com/token/0xB75A2C4f8517e9b40E8C659731968C55955580d5" target="_blank" rel="noreferrer">PolygonScan</a></span>
+            </div>
+          </div>
+
+          <div class="detail-box tall-box">
+            <h4>市场行为提示</h4>
+            <ul>
+              <li>首池越浅，价格越敏感。</li>
+              <li>大额交易会明显影响价格。</li>
+              <li>公开购买链接必须防假币和山寨池。</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="faq card" id="faq">
+      <div class="section-head">
+        <div>
+          <span class="kicker">FAQ</span>
+          <h2>常见问题</h2>
+          <p>这里适合直接复制到官网或社群公告中。</p>
+        </div>
+      </div>
+
+      <div class="faq-list">
+        <button class="faq-item active" type="button">
+          <div class="faq-question">
+            <strong>别人现在能买 PU 吗？</strong>
+            <span>点击展开</span>
+          </div>
+          <div class="faq-answer">
+            PU/USDC 流动性池已在 QuickSwap v3 上线！切换到 Polygon Mainnet，在 <a href="https://dapp.quickswap.exchange/swap?from=0x3c499c542cEF5E3811e1192ce70d8cC03d5c3359&to=0xB75A2C4f8517e9b40E8C659731968C55955580d5&chainId=137" target="_blank" rel="noreferrer">QuickSwap</a> 用 USDC 即可兑换 PU。
+          </div>
+        </button>
+        <button class="faq-item" type="button">
+          <div class="faq-question">
+            <strong>手续费是多少？</strong>
+            <span>点击展开</span>
+          </div>
+          <div class="faq-answer">
+            PU/USDC 池子使用 <strong>0.01% 手续费</strong>档位（QuickSwap v3 最低档）。每笔交易收取交易额的 0.01%，直接分配给流动性提供者。例如交易 10 USDC 的 PU，手续费约 0.001 USDC。
+          </div>
+        </button>
+        <button class="faq-item" type="button">
+          <div class="faq-question">
+            <strong>滑点应该设置多少？</strong>
+            <span>点击展开</span>
+          </div>
+          <div class="faq-answer">
+            当前池子深度约 <strong>100 USDC</strong>，建议：小额（≤1 USDC）设 1%，中额（1–5 USDC）设 3%，大额（>5 USDC）设 5% 以上或分批执行。QuickSwap 中点击右上角 ⚙️ 图标可设置滑点容差（Slippage Tolerance）。
+          </div>
+        </button>
+        <button class="faq-item" type="button">
+          <div class="faq-question">
+            <strong>交易失败怎么办？</strong>
+            <span>点击展开</span>
+          </div>
+          <div class="faq-answer">
+            常见原因：① 滑点过小——价格在确认前变动超出容差，请提高滑点后重试；② POL 不足——Polygon 链上交易需要 POL 作 gas，请确保钱包有 0.05+ POL；③ 授权未通过——首次交易需先完成 USDC Approve，点击 QuickSwap 页面的 Approve 按钮。失败的链上交易不会扣除代币，但 gas 费用仍会消耗少量 POL。
+          </div>
+        </button>
+        <button class="faq-item" type="button">
+          <div class="faq-question">
+            <strong>创始人需要自己再买一部分吗？</strong>
+            <span>点击展开</span>
+          </div>
+          <div class="faq-answer">
+            不一定。当前设计中，初始供应已一次性铸造到部署者地址；如果你控制这个地址，就已经持有全部初始供应。
+          </div>
+        </button>
+        <button class="faq-item" type="button">
+          <div class="faq-question">
+            <strong>PU 能当稳定币吗？</strong>
+            <span>点击展开</span>
+          </div>
+          <div class="faq-answer">
+            目前不能。PU 的价格由流动性池决定，属于普通可交易代币；如果要做稳定价格，需要重新设计锚定、赎回和风控机制。
+          </div>
+        </button>
+      </div>
+    </section>
+
+    <section class="footer-grid" id="links">
+      <article class="card small-card">
+        <span class="kicker">链上入口</span>
+        <h3>官方查询</h3>
+        <div class="link-list">
+          <a href="https://polygonscan.com/token/0xB75A2C4f8517e9b40E8C659731968C55955580d5" target="_blank" rel="noreferrer">Token 页面</a>
+          <a href="https://polygonscan.com/address/0xB75A2C4f8517e9b40E8C659731968C55955580d5" target="_blank" rel="noreferrer">Proxy 地址</a>
+          <a href="https://polygonscan.com/address/0x51cB7d6601E8f5Bf946474E0a7F8b922F54A09a0" target="_blank" rel="noreferrer">Implementation 地址</a>
+          <a href="roadmap.html" data-zh="查看路线图" data-en="Open Roadmap">查看路线图</a>
+        </div>
+      </article>
+
+      <article class="card small-card">
+        <span class="kicker">DEX 交易入口</span>
+        <h3>立即交易 PU</h3>
+        <div class="link-list">
+          <a href="https://dapp.quickswap.exchange/swap?from=0x3c499c542cEF5E3811e1192ce70d8cC03d5c3359&to=0xB75A2C4f8517e9b40E8C659731968C55955580d5&chainId=137" target="_blank" rel="noreferrer">🔁 QuickSwap — 买入 PU</a>
+          <a href="https://dapp.quickswap.exchange/swap?from=0xB75A2C4f8517e9b40E8C659731968C55955580d5&to=0x3c499c542cEF5E3811e1192ce70d8cC03d5c3359&chainId=137" target="_blank" rel="noreferrer">🔁 QuickSwap — 卖出 PU</a>
+          <a href="https://dapp.quickswap.exchange/pool/191190?chainId=137" target="_blank" rel="noreferrer">📊 流动性池 Position #191190</a>
+        </div>
+      </article>
+
+      <article class="card small-card highlight-card">
+        <span class="kicker">一句话介绍</span>
+        <h3>PU 是什么</h3>
+        <p>
+          PU 是一个部署在 Polygon 主网上的固定总量可升级 ERC-20 代币，适合按团队、生态、流动性和社区策略进行公开分发与市场交易。
+        </p>
+      </article>
+    </section>
+
+    <footer class="site-footer card">
+      <div class="site-footer-main">
+        <strong data-zh="PU 官方信息页" data-en="PU Official Information Hub">PU 官方信息页</strong>
+        <p data-zh="本页面用于展示公开资料，不构成投资建议。请仅使用官方合约地址进行查询与交易。" data-en="This site is for public information only and does not constitute investment advice. Use official contract addresses only when searching or trading.">本页面用于展示公开资料，不构成投资建议。请仅使用官方合约地址进行查询与交易。</p>
+      </div>
+      <div class="site-footer-meta">
+        <span data-zh="网络：Polygon Mainnet" data-en="Network: Polygon Mainnet">网络：Polygon Mainnet</span>
+        <span data-zh="代币：PU" data-en="Token: PU">代币：PU</span>
+        <span data-zh="治理：Gnosis Safe" data-en="Governance: Gnosis Safe">治理：Gnosis Safe</span>
+      </div>
+    </footer>
+  </main>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <button class="back-to-top" type="button" aria-label="回到顶部">↑</button>
+
+  <script src="app.js"></script>
+</body>
+</html>
