@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="PU Token 正式上线公告：购买教程、风险声明与支持渠道" />
+  <meta property="og:title" content="PU Token 正式上线" />
+  <meta property="og:description" content="PU Token 已在 Polygon Mainnet QuickSwap v3 开放交易。" />
+  <meta property="og:image" content="assets/pu-logo-256.png" />
+  <meta property="og:type" content="website" />
+  <title>PU Token — 上线公告</title>
+  <link rel="icon" type="image/png" href="assets/pu-logo-256.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    .announce-hero { text-align: center; padding: 2.5rem 2rem 1.5rem; }
+    .announce-hero .eyebrow { margin-bottom: .6rem; }
+    .announce-hero h1 { font-size: clamp(1.8rem, 4vw, 2.8rem); margin-bottom: .8rem; }
+    .announce-hero .hero-text { max-width: 640px; margin: 0 auto 1.4rem; }
+    .announce-date { font-size: .8rem; color: var(--muted, #8892a4); margin-bottom: 1.2rem; }
+    .announce-btn { display: inline-flex; align-items: center; gap: .5rem; background: var(--accent, #7c3aed); color: #fff; padding: .7rem 1.6rem; border-radius: 999px; font-weight: 700; text-decoration: none; font-size: .95rem; transition: opacity .2s; }
+    .announce-btn:hover { opacity: .85; }
+
+    .guide-section { display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem; }
+    @media (max-width: 700px) { .guide-section { grid-template-columns: 1fr; } }
+    .guide-col { background: var(--surface-2, rgba(255,255,255,.04)); border: 1px solid var(--border, rgba(255,255,255,.08)); border-radius: 14px; padding: 1.4rem 1.6rem; }
+    .guide-col h3 { font-size: 1rem; margin-bottom: 1rem; display: flex; align-items: center; gap: .5rem; }
+    .guide-col ol { padding-left: 1.3rem; line-height: 2; font-size: .92rem; }
+    .guide-col ol li { color: var(--text-secondary, #b0bac8); }
+    .guide-col ol li strong { color: var(--text, #e8eaf0); }
+    .guide-col .code-inline { font-family: monospace; font-size: .82rem; background: rgba(124,58,237,.15); color: #a78bfa; padding: .1rem .45rem; border-radius: 5px; word-break: break-all; }
+
+    .risk-box { background: rgba(239,68,68,.06); border: 1px solid rgba(239,68,68,.25); border-radius: 14px; padding: 1.4rem 1.6rem; }
+    .risk-box h3 { color: #f87171; margin-bottom: .9rem; font-size: 1rem; }
+    .risk-box ul { padding-left: 1.3rem; line-height: 1.9; font-size: .9rem; color: var(--text-secondary, #b0bac8); }
+    .risk-box ul li strong { color: #fca5a5; }
+
+    .support-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; }
+    .support-card { background: var(--surface-2, rgba(255,255,255,.04)); border: 1px solid var(--border, rgba(255,255,255,.08)); border-radius: 14px; padding: 1.2rem 1.4rem; }
+    .support-card .s-label { font-size: .75rem; color: var(--muted, #8892a4); text-transform: uppercase; letter-spacing: .06em; margin-bottom: .4rem; }
+    .support-card .s-value { font-size: .88rem; font-weight: 600; word-break: break-all; }
+    .support-card a { color: var(--accent-light, #a78bfa); text-decoration: none; }
+    .support-card a:hover { text-decoration: underline; }
+
+    .section-gap { margin-top: 1.6rem; }
+    .section-kicker { font-size: .75rem; text-transform: uppercase; letter-spacing: .08em; color: var(--muted, #8892a4); margin-bottom: .5rem; }
+    .section-h2 { font-size: 1.3rem; font-weight: 700; margin-bottom: 1rem; }
+  </style>
+</head>
+<body data-page="announce">
+  <div class="background-orb orb-a"></div>
+  <div class="background-orb orb-b"></div>
+  <div class="background-grid"></div>
+  <div class="scroll-progress" aria-hidden="true"><span></span></div>
+
+  <main class="page-shell">
+    <header class="topbar card">
+      <a class="brand" href="index.html" aria-label="返回首页">
+        <span class="brand-mark">PU</span>
+        <span class="brand-copy">
+          <strong>PU Token</strong>
+          <small>Polygon Mainnet Dashboard</small>
+        </span>
+      </a>
+      <nav class="nav-links" aria-label="页面导航">
+        <a class="nav-link" href="index.html" data-nav-link data-nav="index" data-zh="概览" data-en="Overview">概览</a>
+        <a class="nav-link" href="issuance.html" data-nav-link data-nav="issuance" data-zh="发行" data-en="Issuance">发行</a>
+        <a class="nav-link" href="market.html" data-nav-link data-nav="market" data-zh="市场" data-en="Market">市场</a>
+        <a class="nav-link" href="roadmap.html" data-nav-link data-nav="roadmap" data-zh="路线图" data-en="Roadmap">路线图</a>
+        <a class="nav-link" href="faq.html" data-nav-link data-nav="faq" data-zh="FAQ" data-en="FAQ">FAQ</a>
+        <a class="nav-link active" href="announce.html" data-nav-link data-nav="announce" data-zh="公告" data-en="Announce">公告</a>
+      </nav>
+      <button class="lang-toggle" type="button" data-lang-toggle>EN</button>
+    </header>
+
+    <!-- Hero -->
+    <section class="card announce-hero" id="announce">
+      <div class="eyebrow" data-zh="2026年5月23日 · Polygon Mainnet" data-en="May 23, 2026 · Polygon Mainnet">2026年5月23日 · Polygon Mainnet</div>
+      <h1 data-zh="PU Token 正式开放交易" data-en="PU Token Is Now Live for Trading">PU Token 正式开放交易</h1>
+      <p class="hero-text" data-zh="PU 已在 Polygon 主网 QuickSwap v3 流动性池上线，任何人均可通过 USDC 与 PU 进行兑换。本页提供完整的购买教程、风险声明与技术支持入口。" data-en="PU is now live on QuickSwap v3 on Polygon Mainnet. Anyone can swap between USDC and PU. This page provides a complete trading guide, risk disclaimer, and support channels.">
+        PU 已在 Polygon 主网 QuickSwap v3 流动性池上线，任何人均可通过 USDC 与 PU 进行兑换。本页提供完整的购买教程、风险声明与技术支持入口。
+      </p>
+      <div class="announce-date" data-zh="发布时间：2026年5月23日" data-en="Published: May 23, 2026">发布时间：2026年5月23日</div>
+      <a class="announce-btn" href="https://dapp.quickswap.exchange/swap?from=0x3c499c542cEF5E3811e1192ce70d8cC03d5c3359&to=0xB75A2C4f8517e9b40E8C659731968C55955580d5&chainId=137" target="_blank" rel="noopener">
+        ⚡ 立即在 QuickSwap 交易
+      </a>
+    </section>
+
+    <!-- 购买教程 -->
+    <section class="card section-gap" id="guide">
+      <div class="section-kicker" data-zh="交易指南" data-en="Trading Guide">交易指南</div>
+      <div class="section-h2" data-zh="如何购买 PU / How to Buy PU" data-en="How to Buy PU / 如何购买 PU">如何购买 PU / How to Buy PU</div>
+
+      <div class="guide-section">
+        <!-- 中文 -->
+        <div class="guide-col">
+          <h3>🇨🇳 中文教程</h3>
+          <ol>
+            <li>安装 <strong>MetaMask</strong>（或任意 EVM 钱包）并添加 <strong>Polygon 网络</strong>（Chain ID: 137）</li>
+            <li>确保钱包内有少量 <strong>POL</strong>（用于支付 Gas，一般不超过 $0.01）</li>
+            <li>将 <strong>USDC</strong>（Polygon 版本）充入钱包</li>
+            <li>点击上方按钮打开 QuickSwap，或手动设置：
+              <br/>From: <span class="code-inline">USDC</span>
+              <br/>To: <span class="code-inline">0xB75A2C4f8517e9b40E8C659731968C55955580d5</span>
+            </li>
+            <li>建议 <strong>滑点</strong>：少量 ≤1%；大额 3%–5%</li>
+            <li>确认后等待链上确认（通常 &lt;5 秒）</li>
+          </ol>
+        </div>
+
+        <!-- English -->
+        <div class="guide-col">
+          <h3>🇺🇸 English Guide</h3>
+          <ol>
+            <li>Install <strong>MetaMask</strong> (or any EVM wallet) and add the <strong>Polygon network</strong> (Chain ID: 137)</li>
+            <li>Have a small amount of <strong>POL</strong> for gas (usually &lt; $0.01 per swap)</li>
+            <li>Bridge or deposit <strong>USDC</strong> (Polygon) to your wallet</li>
+            <li>Click the button above to open QuickSwap, or manually set:
+              <br/>From: <span class="code-inline">USDC</span>
+              <br/>To: <span class="code-inline">0xB75A2C4f8517e9b40E8C659731968C55955580d5</span>
+            </li>
+            <li>Recommended <strong>slippage</strong>: ≤1% for small trades; 3–5% for larger ones</li>
+            <li>Confirm and wait for on-chain confirmation (usually &lt;5 seconds)</li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <!-- Token 基本信息 -->
+    <section class="card section-gap" id="tokeninfo">
+      <div class="section-kicker" data-zh="代币参数" data-en="Token Parameters">代币参数</div>
+      <div class="section-h2" data-zh="合约信息" data-en="Contract Info">合约信息</div>
+      <div class="support-grid">
+        <div class="support-card">
+          <div class="s-label">代币名称 / Name</div>
+          <div class="s-value">PU Token (PU)</div>
+        </div>
+        <div class="support-card">
+          <div class="s-label">网络 / Network</div>
+          <div class="s-value">Polygon Mainnet (Chain 137)</div>
+        </div>
+        <div class="support-card">
+          <div class="s-label">合约地址 / Contract</div>
+          <div class="s-value"><a href="https://polygonscan.com/token/0xB75A2C4f8517e9b40E8C659731968C55955580d5" target="_blank" rel="noopener">0xB75A2C4f...5580d5</a></div>
+        </div>
+        <div class="support-card">
+          <div class="s-label">总量 / Total Supply</div>
+          <div class="s-value">1,000,000,000 PU（固定）</div>
+        </div>
+        <div class="support-card">
+          <div class="s-label">交易对 / Pair</div>
+          <div class="s-value">PU / USDC · 0.01% fee</div>
+        </div>
+        <div class="support-card">
+          <div class="s-label">初始价格 / Init Price</div>
+          <div class="s-value">0.01 USDC / PU</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 风险声明 -->
+    <section class="card section-gap" id="risk">
+      <div class="section-kicker" data-zh="风险声明" data-en="Risk Disclaimer">风险声明</div>
+      <div class="section-h2" data-zh="请在交易前仔细阅读" data-en="Please Read Before Trading">请在交易前仔细阅读</div>
+      <div class="guide-section">
+        <div class="risk-box">
+          <h3>⚠️ 中文风险声明</h3>
+          <ul>
+            <li><strong>价格波动风险：</strong>PU 价格由市场供需决定，可能出现剧烈波动，您可能损失全部投入资金。</li>
+            <li><strong>流动性风险：</strong>池子规模较小，大额交易可能产生较高滑点。</li>
+            <li><strong>智能合约风险：</strong>虽经测试，但任何链上合约均存在漏洞可能性，请勿投入超出可承受损失的资金。</li>
+            <li><strong>可升级代理：</strong>合约使用 UUPS 可升级架构，升级权限由项目方控制。</li>
+            <li><strong>非投资建议：</strong>本页面仅提供信息，不构成任何投资建议或要约。</li>
+            <li><strong>监管合规：</strong>请遵守您所在地区的相关法律法规。</li>
+          </ul>
+        </div>
+        <div class="risk-box">
+          <h3>⚠️ English Risk Disclaimer</h3>
+          <ul>
+            <li><strong>Price Volatility:</strong> PU price is determined by market supply and demand. Values may fluctuate significantly and you may lose your entire investment.</li>
+            <li><strong>Liquidity Risk:</strong> The pool has limited depth; large trades may experience significant slippage.</li>
+            <li><strong>Smart Contract Risk:</strong> Although tested, all on-chain contracts carry potential vulnerabilities. Only risk what you can afford to lose.</li>
+            <li><strong>Upgradeable Proxy:</strong> The contract uses a UUPS upgradeable architecture controlled by the project team.</li>
+            <li><strong>Not Financial Advice:</strong> This page is for informational purposes only and does not constitute investment advice or an offer.</li>
+            <li><strong>Regulatory Compliance:</strong> Please comply with applicable laws and regulations in your jurisdiction.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- 支持渠道 -->
+    <section class="card section-gap" id="support">
+      <div class="section-kicker" data-zh="支持渠道" data-en="Support Channels">支持渠道</div>
+      <div class="section-h2" data-zh="遇到问题？联系我们" data-en="Need Help? Contact Us">遇到问题？联系我们</div>
+      <div class="support-grid">
+        <div class="support-card">
+          <div class="s-label">官方网站 / Website</div>
+          <div class="s-value"><a href="https://ounc.github.io/pu/" target="_blank" rel="noopener">ounc.github.io/pu</a></div>
+        </div>
+        <div class="support-card">
+          <div class="s-label">GitHub</div>
+          <div class="s-value"><a href="https://github.com/ounc/pu" target="_blank" rel="noopener">github.com/ounc/pu</a></div>
+        </div>
+        <div class="support-card">
+          <div class="s-label">链上查询 / Explorer</div>
+          <div class="s-value"><a href="https://polygonscan.com/token/0xB75A2C4f8517e9b40E8C659731968C55955580d5" target="_blank" rel="noopener">PolygonScan</a></div>
+        </div>
+        <div class="support-card">
+          <div class="s-label">价格行情 / Price</div>
+          <div class="s-value"><a href="https://www.geckoterminal.com/polygon_pos/pools/0x562E1A5b3918Ef1Bf6A0e1DfFb21FEb6a1f499A3" target="_blank" rel="noopener">GeckoTerminal</a></div>
+        </div>
+        <div class="support-card">
+          <div class="s-label">交易入口 / Trade</div>
+          <div class="s-value"><a href="https://dapp.quickswap.exchange/swap?from=0x3c499c542cEF5E3811e1192ce70d8cC03d5c3359&to=0xB75A2C4f8517e9b40E8C659731968C55955580d5&chainId=137" target="_blank" rel="noopener">QuickSwap v3</a></div>
+        </div>
+        <div class="support-card">
+          <div class="s-label">合约代码 / Source</div>
+          <div class="s-value"><a href="https://polygonscan.com/address/0xB75A2C4f8517e9b40E8C659731968C55955580d5#code" target="_blank" rel="noopener">已验证 ✓</a></div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="card section-gap" style="text-align:center; padding: 1.2rem; font-size:.82rem; color: var(--muted, #8892a4);">
+      <span data-zh="PU Token · Polygon Mainnet · 仅供参考，不构成投资建议" data-en="PU Token · Polygon Mainnet · For informational purposes only, not financial advice">
+        PU Token · Polygon Mainnet · 仅供参考，不构成投资建议
+      </span>
+    </footer>
+
+  </main>
+  <script src="main.js"></script>
+</body>
+</html>
